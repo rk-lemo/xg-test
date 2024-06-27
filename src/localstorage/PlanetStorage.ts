@@ -28,6 +28,13 @@ export class PlanetStorage implements IDataProcessor {
             return this.cache.get(key)
         }
         const data = this.getFilteredData(planet, from, to)
+        if (!data || data.length === 0){
+            return {
+                planet: planet,
+                value: 0,
+                processed: 0
+            }
+        }
         const result = Util.calculateAverage(data, planet, from, to)
         this.cache.set(key, result)
         return result
