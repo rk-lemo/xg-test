@@ -1,0 +1,19 @@
+Please send this to the candidate:
+
+In this assignment you'll have to read a local filestream (attached), process incoming data and expose insights (average only) via a http API.
+
+Request:
+GET http://{host}/{type}/average?from={date}&to{date}
+
+Response:
+{
+"type": {string},
+"value": {float}
+"processed": {count of processed samples}
+}
+
+
+Choose your preferred language from the above
+Python, Node.js, Scala
+
+Bonus: store samples in MongoDB and serve sample via another api endpoint
